@@ -1,0 +1,11 @@
+﻿node_modules/
+.astro/
+.env
+dist/
+build/
+.next/
+.vscode/
+.DS_Store
+
+# Local Netlify folder
+.netlify
