@@ -26,7 +26,7 @@ const routePrefix = collectionType === 'POEMS' ? 'poem' :
     <link rel="preload" as="image" href={backgroundImageLight.src} />
     <link rel="preload" as="image" href={backgroundImageDark.src} />
     <style>html { background-color: #1a1816; }</style>
-    <link rel="stylesheet" href="/pagefind/pagefind-modular-ui.css" />
+    
 </head>
 
 <body id="site-body">
@@ -43,7 +43,7 @@ const routePrefix = collectionType === 'POEMS' ? 'poem' :
             <div class="quote-card">
                 <div class="quote-container">
                     <div class="quote-slide active">"Meaning is limited, life is edited"</div>
-                    <div class="quote-slide">"You are here. Then you won't be. That's not sad that's why we write."</div>
+                    <div class="quote-slide">"Emptiness is the highest form of equality"</div>
                     <div class="quote-slide">"No one lives on the stairs."</div>
                     <div class="quote-slide">"Perfection is sleight. Comfort in make up."</div>
                     <div class="quote-slide">"The page holds what the wind cannot."</div>
@@ -94,25 +94,23 @@ const routePrefix = collectionType === 'POEMS' ? 'poem' :
         </button>
     </header>
 
-    <!-- Search overlay — replace the existing one in BaseLayout.astro -->
-    <div class="search-overlay" id="searchOverlay">
-        <div class="search-box">
-            <div class="search-input-wrap">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-                <input
-                    type="text"
-                    id="search-input"
-                    placeholder="Search poems, stories, blogs..."
-                    autocomplete="off"
-                    spellcheck="false"
-                />
-            </div>
-            <div class="search-results" id="search-results"></div>
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-box">
+        <div class="search-input-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search poems, stories, blogs..."
+                autocomplete="off"
+            />
         </div>
+        <div class="search-results" id="search-results"></div>
     </div>
+</div>
 
     <div class="nav-overlay" id="navOverlay"></div>
     <aside class="mobile-nav-sidebar" id="mobileSidebar">
@@ -275,74 +273,121 @@ const routePrefix = collectionType === 'POEMS' ? 'poem' :
         })();
     </script>
 
- <script is:inline>
-const searchToggle  = document.getElementById('searchToggle');
+<script is:inline>
+    const searchToggle  = document.getElementById('searchToggle');
 const searchOverlay = document.getElementById('searchOverlay');
 const searchInput   = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
-let pagefind        = null;
-let pagefindLoading = false;
-let pagefindReady   = false;
 
-async function loadPagefind() {
-    if (pagefindReady) return;
-    if (pagefindLoading) {
-        // Wait for existing load to finish
-        while (pagefindLoading) {
-            await new Promise(r => setTimeout(r, 50));
-        }
-        return;
-    }
-    pagefindLoading = true;
+let fuse      = null;
+let fuseReady = false;
+
+async function loadFuse() {
+    if (fuseReady) return;
     try {
-        pagefind = await import('/pagefind/pagefind.js');
-        if (pagefind?.init) await pagefind.init();
-        pagefindReady = true;
+        await new Promise((resolve, reject) => {
+            const s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js';
+            s.onload = resolve;
+            s.onerror = reject;
+            document.head.appendChild(s);
+        });
+
+        const res  = await fetch('/search-index.json');
+        const data = await res.json();
+        window._searchData = data;
+
+        fuse = new window.Fuse(data, {
+            keys: [
+                { name: 'title',   weight: 0.6 },
+                { name: 'excerpt', weight: 0.2 },
+                { name: 'text',    weight: 0.2 },
+            ],
+            threshold: 0.2,
+            ignoreLocation: true,
+            includeMatches: true,
+            minMatchCharLength: 3,
+            useExtendedSearch: false,
+            shouldSort: true,
+        });
+
+        fuseReady = true;
     } catch (e) {
-        console.error('Pagefind load error:', e);
+        console.error('Search load error:', e);
     }
-    pagefindLoading = false;
 }
 
-async function doSearch(query) {
-    if (!query.trim()) {
-        searchResults.innerHTML = '';
+function getSnippet(item, matches) {
+    // Try to find the matched word in the full text and show context around it
+    const textMatch = matches?.find(m => m.key === 'text');
+    if (textMatch && textMatch.indices.length && item.text) {
+        const [start] = textMatch.indices[0];
+        const s = Math.max(0, start - 60);
+        const e = Math.min(item.text.length, start + 140);
+        const snippet = (s > 0 ? '...' : '') + item.text.slice(s, e) + (e < item.text.length ? '...' : '');
+        // Highlight the matched word in snippet
+        return snippet.replace(new RegExp(`(${item.text.slice(textMatch.indices[0][0], textMatch.indices[0][1] + 1)})`, 'gi'), '<mark>$1</mark>');
+    }
+    // Fall back to excerpt with title match highlighted
+    const titleMatch = matches?.find(m => m.key === 'title');
+    if (titleMatch) return item.excerpt;
+    return item.excerpt;
+}
+
+function highlightTitle(title, matches) {
+    const m = matches?.find(m => m.key === 'title');
+    if (!m || !m.indices.length) return title;
+    let result = '';
+    let last = 0;
+    for (const [s, e] of m.indices.slice(0, 3)) {
+        result += title.slice(last, s);
+        result += `<mark>${title.slice(s, e + 1)}</mark>`;
+        last = e + 1;
+    }
+    result += title.slice(last);
+    return result;
+}
+function doSearch(query) {
+    if (!query.trim()) { searchResults.innerHTML = ''; return; }
+    if (!window._searchData) {
+        searchResults.innerHTML = '<p class="search-no-results">Loading search...</p>';
         return;
     }
-    await loadPagefind();
-    if (!pagefind?.search) {
-        searchResults.innerHTML = '<p class="search-no-results">Search unavailable.</p>';
-        return;
-    }
-    try {
-        const results = await pagefind.search(query);
-        if (!results.results.length) {
-            searchResults.innerHTML = '<p class="search-no-results">Nothing found for "' + query + '"</p>';
-            return;
+
+    const q = query.toLowerCase();
+    const exactMatches = window._searchData.filter(item =>
+        item.text.toLowerCase().includes(q) ||
+        item.title.toLowerCase().includes(q)
+    ).map(item => {
+        const idx = item.text.toLowerCase().indexOf(q);
+        let snippet = item.excerpt;
+        if (idx !== -1) {
+            const s = Math.max(0, idx - 60);
+            const e = Math.min(item.text.length, idx + q.length + 140);
+            const raw = (s > 0 ? '...' : '') + item.text.slice(s, e) + '...';
+            snippet = raw.replace(new RegExp(`(${query})`, 'gi'), '<mark>$1</mark>');
         }
-        const data = await Promise.all(results.results.slice(0, 8).map(r => r.data()));
-        searchResults.innerHTML = data.map(r => {
-            const type = r.url.includes('/poem/') ? 'Poem'
-                       : r.url.includes('/stories/') ? 'Story'
-                       : r.url.includes('/blog/') ? 'Blog'
-                       : 'Page';
-            return `
-                <a href="${r.url}" class="search-result-item">
-                    <span class="search-result-type">${type}</span>
-                    <span class="search-result-title">${r.meta?.title ?? 'Untitled'}</span>
-                    ${r.excerpt ? `<span class="search-result-excerpt">${r.excerpt}</span>` : ''}
-                </a>
-            `;
-        }).join('');
-    } catch (e) {
-        searchResults.innerHTML = '<p class="search-no-results">Search error. Try again.</p>';
-        console.error(e);
+        const title = item.title.replace(new RegExp(`(${query})`, 'gi'), '<mark>$1</mark>');
+        return { item, snippet, title };
+    });
+
+    if (!exactMatches.length) {
+        searchResults.innerHTML = `<p class="search-no-results">Nothing found for "${query}"</p>`;
+        return;
     }
+
+    searchResults.innerHTML = exactMatches.slice(0, 8).map(({ item, snippet, title }) => `
+        <a href="${item.url}" class="search-result-item">
+            <span class="search-result-type">${item.type}</span>
+            <span class="search-result-title">${title}</span>
+            ${snippet ? `<span class="search-result-excerpt">${snippet}</span>` : ''}
+        </a>
+    `).join('');
 }
 
 function openSearch() {
     searchOverlay?.classList.add('open');
-    loadPagefind(); // preload immediately on open
+    loadFuse();
     setTimeout(() => searchInput?.focus(), 100);
 }
 
@@ -353,8 +398,8 @@ function closeSearch() {
 }
 
 searchToggle?.addEventListener('click', openSearch);
-searchInput?.addEventListener('input', (e) => doSearch(e.target.value));
-searchInput?.addEventListener('keydown', (e) => {
+searchInput?.addEventListener('input', e => doSearch(e.target.value));
+searchInput?.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
         const first = searchResults?.querySelector('.search-result-item');
         if (first) first.click();

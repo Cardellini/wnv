@@ -89,11 +89,11 @@ header {
 
 @media (max-width: 1000px) {
     .logo { font-size: 15px; letter-spacing: 2px; order: 1; flex: 0 0 auto; }
-    .logo-icon { width: 30px; height: 30px; }
+    .logo-icon { width: 50px; height: 50px; }
 }
 @media (max-width: 380px) {
     .logo { font-size: 13px; letter-spacing: 1px; gap: 7px; }
-    .logo-icon { width: 26px; height: 26px; }
+    .logo-icon { width: 40px; height: 40px; }
 }
 
 .quote-slideshow { flex: 0 1 500px; min-width: 0; max-width: 500px; }
@@ -1135,4 +1135,42 @@ footer                  { background: var(--bg-header); }
 }
 :root .search-result-title {
     color: #f0ece4;
+}
+/* ── DESKTOP QUOTE FIX — PREVENT OVERFLOW ── */
+@media (min-width: 1001px) {
+    .quote-container {
+        height: 42px !important;
+        overflow: hidden !important;
+        position: relative !important;
+    }
+    .quote-slide {
+        position: absolute !important;
+        inset: 0 !important;
+        display: flex !important;
+        opacity: 0 !important;
+    }
+    .quote-slide.active {
+        opacity: 1 !important;
+    }
+}
+
+/* ── TABLET HEADER — EDGES ── */
+@media (min-width: 701px) and (max-width: 1200px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+    }
+    .theme-toggle  { order: 1; flex-shrink: 0; }
+    .logo          { order: 2; flex: 1; justify-content: center; }
+    .hamburger-btn { order: 3; display: block; flex-shrink: 0; }
+    .search-toggle { order: 4; flex-shrink: 0; }
+    .quote-slideshow { 
+        order: 5; 
+        flex: 1 1 100%; 
+        max-width: 100%;
+    }
+    .desktop-nav { display: none; }
 }
