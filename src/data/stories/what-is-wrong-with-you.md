@@ -30,7 +30,7 @@ He tries to be there as much as possible, but the current generation treats avai
 
 He therefore never fits in, losing friends along the way and his incredible people skills are no longer as incredible. He has developed social anxiety, and he is starting to feel lonely. Reaching out has never been harder and he does not even know if he wants to. Listening to people being vulnerable and how their cries for help were ignored makes him wish there were more people like him. But maybe that would make everything worse.
 
-He is just trying to make connections, talk to people and go deeper than the surface. It’s creepy in a way but he finds it pointless to have shallow conversations. Small talk is exactly what it sounds like for him, small!
+He is just trying to make connections, talk to people and go deeper than the surface. It’s creepy in a way but he finds it pointless to have shallow conversations. Small talk is exactly what it sounds like to him, small!
 
 Maybe if he was better at hiding, he would have a normal life. But what even is a normal life?
 
@@ -40,7 +40,7 @@ Many are times he isolates himself overthinking every little word that he might 
 
 He is turning into a social cue disaster, and his mind is not making it better.
 
-He is haunted by words he should have said or even the posture he should have used in a past social situation. The weight of their eyes on him, their words at him and their whispers that he might have imagined, they rob him of himself.
+He is haunted by words he should have said or even the posture he should have used in a past social situation. The weight of their eyes on him, their words and their whispers that he might have imagined, they rob him of himself.
 
 No man is an island used to be a thing in the past. When human beings needed communities to survive attacks from wild animals. Now it is judgement here and abandonment there. Everyone is just selfish and looking out for their own. It is why it feels isolating being a part of nobody’s “own.” However, being the first man-made island is not such a bad idea. But nonetheless, he has made a vow to never change.
 
