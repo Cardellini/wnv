@@ -347,8 +347,8 @@ footer { background: #1a1816; border-top: 1px solid rgba(74,111,165,0.2); paddin
 /* ── STORIES PAGE ── */
 .stories-page { max-width: 1000px; margin: 0 auto; padding: 120px 20px 60px; }
 .stories-header { text-align: center; margin-bottom: 60px; }
-.stories-header h1 { font-size: 2.5rem; font-weight: 300; color: #1a1816; margin-bottom: 12px; letter-spacing: 2px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: normal; }
-.stories-subhead { color: #8a7e6e; font-size: 0.95rem; }
+.stories-header h1 { font-size: 2.5rem; font-weight: 300; color: var(--home-headline, #1a1816); margin-bottom: 12px; letter-spacing: 2px; font-family: 'Cormorant Garamond', Georgia, serif; font-style: normal;}
+.stories-subhead {color: var(--home-body, #8a7e6e); font-size: 0.95rem;}
 .stories-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
 .story-card { background: #ffffff; border-radius: 20px; overflow: hidden; transition: transform 0.3s, background 0.3s; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
 .story-card:hover { background: #f3efe9; transform: translateY(-4px); }
