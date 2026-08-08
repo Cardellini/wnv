@@ -150,3 +150,84 @@ small, [class*="powered"],
     font-size: 0.72rem !important;
     font-style: italic !important;
 }
+
+/* ── DARK MODE (driven by .dark-mode class injected via MutationObserver) ── */
+.dark-mode body {
+    color: #e0d5c0;
+}
+
+.dark-mode textarea,
+.dark-mode input[type="text"],
+.dark-mode input[type="email"],
+.dark-mode input[type="url"] {
+    background: #1f1c19 !important;
+    color: #f0ece4 !important;
+    border: 1px solid rgba(240, 236, 228, 0.2) !important;
+}
+
+.dark-mode textarea:focus,
+.dark-mode input:focus {
+    border-color: #c4a882 !important;
+    box-shadow: 0 0 0 3px rgba(196, 168, 130, 0.12) !important;
+    background: #24211d !important;
+}
+
+.dark-mode textarea::placeholder,
+.dark-mode input::placeholder {
+    color: rgba(240, 236, 228, 0.35) !important;
+}
+
+.dark-mode button[type="submit"] {
+    background: #c4a882 !important;
+    color: #0c0b0a !important;
+}
+
+.dark-mode button[type="submit"]:hover {
+    background: #f0ece4 !important;
+}
+
+.dark-mode button:not([type="submit"]) {
+    color: #c4a882 !important;
+}
+
+.dark-mode button:not([type="submit"]):hover {
+    color: #f0ece4 !important;
+}
+
+.dark-mode a { color: #c4a882 !important; }
+.dark-mode a:hover { color: #f0ece4 !important; }
+
+.dark-mode .comment,
+.dark-mode [class*="comment"] {
+    border-bottom-color: rgba(240, 236, 228, 0.08) !important;
+}
+
+.dark-mode .comment-author,
+.dark-mode [class*="author"],
+.dark-mode strong {
+    color: #f0ece4 !important;
+}
+
+.dark-mode time,
+.dark-mode [class*="date"],
+.dark-mode [class*="time"] {
+    color: rgba(240, 236, 228, 0.55) !important;
+}
+
+.dark-mode .comment p,
+.dark-mode [class*="content"] p,
+.dark-mode p {
+    color: rgba(240, 236, 228, 0.72) !important;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4 {
+    color: #f0ece4 !important;
+}
+
+.dark-mode hr, .dark-mode [class*="divider"] {
+    border-top-color: rgba(240, 236, 228, 0.12) !important;
+}
+
+.dark-mode small, .dark-mode [class*="powered"], .dark-mode [class*="footer"] {
+    color: rgba(240, 236, 228, 0.5) !important;
+}

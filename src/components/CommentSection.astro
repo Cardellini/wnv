@@ -1,6 +1,6 @@
 ---
 const APP_ID = "d3144132-1898-43d2-a665-6197a73f35ab";
-const THEME_URL = "https://windandverse.com/cusdis-theme.css";
+const THEME_CSS_URL = "https://windandverse.com/cusdis-theme.css";
 
 interface Props {
     pageId: string;
@@ -25,12 +25,34 @@ const { pageId, pageTitle } = Astro.props;
             data-page-id={pageId}
             data-page-url={Astro.url.href}
             data-page-title={pageTitle}
-            data-theme={THEME_URL}
+            data-theme="auto"
         ></div>
     </div>
 </section>
+<script define:vars={{ THEME_CSS_URL }}>
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+                if (node.tagName !== 'IFRAME') return;
 
-<script>
+                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                const themeClass = isDark ? 'dark-mode' : 'light-mode';
+                const customLink = `<link rel="stylesheet" href="${THEME_CSS_URL}">`;
+
+                if (node.srcdoc && node.srcdoc.includes('</head>')) {
+                    node.srcdoc = node.srcdoc
+                        .replace('</head>', customLink + '</head>')
+                        .replace('<html>', `<html class="${themeClass}">`);
+                }
+            });
+        });
+    });
+
+    const thread = document.getElementById('cusdis_thread');
+    if (thread) {
+        observer.observe(thread, { childList: true, subtree: true });
+    }
+
     const script = document.createElement('script');
     script.src = 'https://cusdis.com/js/cusdis.es.js';
     script.async = true;

@@ -1,6 +1,5 @@
 /* WIND & VERSE — JS SCRIPT
-   One shared file for every page.
-*/
+   One shared file for every page.*/
 
 async function fetchData(url) {
     const response = await fetch(url);
@@ -25,11 +24,6 @@ async function fetchData(url) {
         { bg: '#121212', text: '#d6d2c8', subtext: '#99757d', accent: '#9a4e3a', border: '#2b3440', qMark: '#6e3b46', pattern: 'diamonds' },
         { bg: '#5e6253', text: '#f0e6d3', subtext: '#dfdcd8', accent: '#5a3d55', border: '#2c3e50', qMark: '#b49a83', pattern: 'waves' },
         { bg: '#2b3440', text: '#d6d2c8', subtext: '#b69da2', accent: '#9a4e3a', border: '#3f4436', qMark: '#6e3b46', pattern: 'grid' },
-        /* ── 5 new palettes — built with 4.5:1+ contrast verified from the
-           start (each checked against the same WCAG math used to fix the
-           original 15), in hue families distinct from the existing set:
-           deep indigo, terracotta clay, teal/seafoam, plum/mauve, and
-           desert sand. ── */
         { bg: '#1c2240', text: '#e8dfc8', subtext: '#a9a8c4', accent: '#6b5b95', border: '#3a3a5c', qMark: '#6b5b95', pattern: 'dots' },
         { bg: '#7a3b2e', text: '#f5e6d3', subtext: '#e0bba0', accent: '#c9783f', border: '#4a241c', qMark: '#e0bba0', pattern: 'diamonds' },
         { bg: '#16302e', text: '#d8ecdf', subtext: '#8fc7b8', accent: '#3f8f7a', border: '#0d1f1d', qMark: '#8fc7b8', pattern: 'waves' },
@@ -137,7 +131,7 @@ async function fetchData(url) {
 
 // Unified Global Listener
 document.addEventListener('click', (e) => {
-    // Let search and theme toggle handle their own clicks
+    // search and theme toggle handle their own clicks
     if (e.target.closest('#searchToggle') || 
         e.target.closest('#themeToggle') ||
         e.target.closest('#searchOverlay')) {
@@ -162,7 +156,6 @@ document.addEventListener('click', (e) => {
         closeCollectionSidebar();
     }
 
-    // 2. Your Existing Share/Poem Logic
     delegateShareClick(e);
 });
 
@@ -200,13 +193,8 @@ document.addEventListener('click', (e) => {
                 <div class="share-panel-actions">
                     <button class="share-action-btn primary" type="button" id="shareDownloadBtn">Download image</button>
                     <button class="share-action-btn" type="button" id="shareCopyLinkBtn">Copy link</button>
-                    <button class="share-more-btn" type="button" id="shareMoreBtn" aria-expanded="false">
-                        <span>More options</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
+                    <button class="share-action-btn" type="button" id="shareNativeBtn" style="display:none">Share via&hellip;</button>
                 </div>
-                <div class="share-social-row share-social-grid" id="shareSocialRow" hidden></div>
-                <p class="share-app-tip" id="shareAppTip" style="display:none"></p>
             </div>`;
         document.body.appendChild(overlay);
         overlay.querySelector('.share-panel-close').addEventListener('click', closeShareOverlay);
@@ -312,11 +300,11 @@ document.addEventListener('click', (e) => {
         const bodyLines = quoteLines.slice(1);
         const maxW = W - 200;
 
-        /* ── measure title ── */
+        /* measure title */
         ctx.font = 'bold 56px Georgia, serif';
         const titleWrapped = wrapCanvasText(ctx, title, maxW);
 
-        /* ── measure body ── */
+        /* measure body */
         ctx.font = 'italic 38px Georgia, serif';
         let bodyWrapped = [];
         bodyLines.forEach(line => {
@@ -350,23 +338,6 @@ document.addEventListener('click', (e) => {
         return canvas.toDataURL('image/png');
     }
 
-    /* * buildSocialPlatforms
-     * Returns platforms containing clean SVG shapes colored dynamically.
-     */
-    function buildSocialPlatforms(fullUrl, text) {
-        const enc = encodeURIComponent;
-        return [
-            { id: 'x', color: '#fff', label: 'X', href: `https://twitter.com/intent/tweet?text=${enc(text)}&url=${enc(fullUrl)}`, svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg>` },
-            { id: 'threads', color: '#fff', label: 'Threads', href: `https://threads.net/intent/post?text=${enc(text + ' ' + fullUrl)}`, svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Threads</title><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221z"/></svg>` },
-            { id: 'whatsapp', color: '#25D366', label: 'WhatsApp', href: `https://wa.me/?text=${enc(text + ' ' + fullUrl)}`, svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WhatsApp</title><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>` },
-            { id: 'facebook', color: '#1877F2', label: 'Facebook', href: `https://www.facebook.com/sharer/sharer.php?u=${enc(fullUrl)}`, svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>` },
-            { id: 'telegram', color: '#26A5E4', label: 'Telegram', href: `https://t.me/share/url?url=${enc(fullUrl)}&text=${enc(text)}`, svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Telegram</title><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>` },
-            { id: 'bluesky', color: '#0085FF', label: 'Bluesky', href: `https://bsky.app/intent/compose?text=${enc(text + ' ' + fullUrl)}`, svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Bluesky</title><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026"/></svg>` },
-            { id: 'reddit', color: '#FF4500', label: 'Reddit', href: `https://www.reddit.com/submit?url=${enc(fullUrl)}&title=${enc(text)}`, svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Reddit</title><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg>` },
-            { id: 'substack', color: '#FF6719', label: 'Substack', href: `https://substack.com/share?url=${enc(fullUrl)}`, svg: `<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Substack</title><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>` },
-        ];
-    }
-
     function openShareFlow({ quoteLines, label, url, shareText, paletteIndex }) {
         const bar = document.getElementById('quoteSelectBar');
         if (bar) bar.classList.remove('visible');
@@ -375,9 +346,7 @@ document.addEventListener('click', (e) => {
         const preview = overlay.querySelector('#shareCardPreview');
         const dlBtn = overlay.querySelector('#shareDownloadBtn');
         const copyBtn = overlay.querySelector('#shareCopyLinkBtn');
-        const moreBtn = overlay.querySelector('#shareMoreBtn');
-        const socialRow = overlay.querySelector('#shareSocialRow');
-        const appTip = overlay.querySelector('#shareAppTip');
+        const nativeBtn = overlay.querySelector('#shareNativeBtn');
 
         const imageData = generateQuoteCardImage(quoteLines, label, paletteIndex);
         preview.src = imageData;
@@ -409,55 +378,39 @@ document.addEventListener('click', (e) => {
                 setTimeout(() => { copyBtn.textContent = 'Copy link'; }, 1800);
             }
         };
-        moreBtn.addEventListener('click', () => {
-            const isHidden = socialRow.style.display === 'none' || socialRow.style.display === '';
-            if (isHidden) {
-                socialRow.style.display = 'grid';
-                moreBtn.setAttribute('aria-expanded', 'true');
-                moreBtn.classList.add('open');
+
+        // Native share sheet 
+        if (nativeBtn) {
+            if (navigator.share) {
+                nativeBtn.style.display = '';
+                nativeBtn.onclick = async () => {
+                    try {
+                        let shareData = { title: label || 'Wind & Verse', text, url: fullUrl };
+
+
+                        if (navigator.canShare) {
+                            const blob = await (await fetch(imageData)).blob();
+                            const file = new File([blob], downloadName, { type: 'image/png' });
+                            if (navigator.canShare({ files: [file] })) {
+                                shareData = { title: label || 'Wind & Verse', text, files: [file] };
+                            }
+                        }
+
+                        await navigator.share(shareData);
+                    } catch (err) {
+                        if (err.name !== 'AbortError') {
+                            console.error('Share failed:', err);
+                        }
+                    }
+                };
             } else {
-                socialRow.style.display = 'none';
-                moreBtn.setAttribute('aria-expanded', 'false');
-                moreBtn.classList.remove('open');
+                nativeBtn.style.display = 'none';
             }
-        });
+        }
 
-        socialRow.innerHTML = '';
-        socialRow.style.display = 'none';
-        socialRow.removeAttribute('hidden');
-
-        const platforms = buildSocialPlatforms(fullUrl, text);
-        platforms.forEach(pl => {
-            const el = document.createElement(pl.href ? 'a' : 'button');
-            el.className = 'share-social-btn ssb';
-            el.setAttribute('style', `--brand-color: ${pl.color}`);
-
-            if (pl.href) {
-                el.href = pl.href; el.target = '_blank'; el.rel = 'noopener noreferrer';
-            } else {
-                // Fallback for any future platform added here without a real
-                el.type = 'button';
-                el.addEventListener('click', () => {
-                    dlBtn.click();
-                    if (appTip) { appTip.textContent = pl.tip; appTip.style.display = 'block'; setTimeout(() => { appTip.style.display = 'none'; }, 5000); }
-                });
-            }
-            el.setAttribute('aria-label', pl.label);
-            el.setAttribute('title', pl.label);
-            const svgWithColor = pl.svg.replace('<svg ', `<svg style="fill:${pl.color};color:${pl.color};" `);
-
-            el.innerHTML = `
-    <span class="ssb-icon">${svgWithColor}</span>
-    <span class="ssb-name">${pl.label}</span>`;
-            socialRow.appendChild(el);
-        });
-
-        if (appTip) appTip.style.display = 'none';
         overlay.classList.add('open');
     }
 
-// ... existing code in your main.js ...
-// ... your functions like openShareFlow, toggleFullScreen, etc. are up here ...
 
 /* FULLSCREEN POEM MODE */
 function toggleFullScreen() {
@@ -505,9 +458,6 @@ function normalizePoemLines() {
 
     const originalParagraphs = Array.from(body.querySelectorAll('p'));
     originalParagraphs.forEach(p => {
-        // Split this paragraph's content on <br> into individual lines.
-        // innerHTML is split on <br> (with or without trailing slash/spacing)
-        // so each resulting chunk is the raw HTML for one line.
         const rawLines = p.innerHTML.split(/<br\s*\/?>/i).map(s => s.trim()).filter(s => s.length > 0);
 
         if (rawLines.length === 0) return;
@@ -517,8 +467,6 @@ function normalizePoemLines() {
             const lineEl = document.createElement('p');
             lineEl.className = 'poem-line';
             lineEl.innerHTML = lineHtml;
-            // Last line from this original paragraph carries the stanza gap,
-            // matching where a blank line / paragraph break used to be.
             if (i === rawLines.length - 1) {
                 lineEl.classList.add('stanza-break');
             }
@@ -547,10 +495,6 @@ function initPoemUI() {
         });
     });
 
-    // On THIS page's load, if the flag was set by the previous page's
-    // Prev/Next click, re-apply fullscreen immediately and clear the flag
-    // (so a normal, unrelated visit to a poem page later doesn't
-    // accidentally start in fullscreen).
     if (sessionStorage.getItem('poemFullscreenNav') === '1') {
         sessionStorage.removeItem('poemFullscreenNav');
         if (typeof toggleFullScreen === 'function') {
@@ -572,10 +516,7 @@ function initPoemUI() {
 function delegateShareClick(event) {
     const btn = event.target.closest('.share-btn');
     if (!btn) return;
-    // Poems still have their own dedicated inline <script> (in [slug].astro /
-    // poem.astro) that calls window.openShareFlow directly — keep excluding
-    // #poem-container so this generic handler doesn't also fire for it.
-    //
+
 
     if (btn.closest('#poem-container')) {
         return; 
@@ -601,19 +542,10 @@ function delegateShareClick(event) {
         // identically regardless of page type.
         data.label = storyContainer.dataset.storyTitle || data.label;
         data.quoteLines = [storyContainer.dataset.storyTitle, storyContainer.dataset.storyExcerpt];
-        // FIX: this branch set quoteLines/label but never touched
-        // paletteIndex, so it stayed at the base default (parseInt of a
-        // dataset.palette attribute that doesn't exist on these buttons,
-        // i.e. always 0) — every story's share card used the same palette
-        // regardless of which story it was. Hashing the story's own id
-        // (e.g. "better-to-have-loved") the same way poems already do gives
-        // each story a stable, distinct palette.
         data.paletteIndex = hashStringToIndex(storyContainer.dataset.storyTitle || '', cardPalettes.length);
     } else if (blogContainer) {
         data.label = blogContainer.dataset.blogTitle || data.label;
         data.quoteLines = [blogContainer.dataset.blogTitle, blogContainer.dataset.blogExcerpt];
-        // Same fix as stories — hash the post's title so each post gets its
-        // own stable palette instead of always defaulting to 0.
         data.paletteIndex = hashStringToIndex(blogContainer.dataset.blogTitle || '', cardPalettes.length);
     }
 
@@ -623,21 +555,7 @@ function delegateShareClick(event) {
 // Run on initial load and Astro navigations
 document.addEventListener('DOMContentLoaded', initPoemUI);
 document.addEventListener('astro:page-load', initPoemUI);
-
-/* 
-   EXPOSE TO is:inline SCRIPTS
-   FIX: this file is loaded with <script type="module">
-   in BaseLayout.astro, so none of the functions above are
-   automatically on `window`. [slug].astro's poem-page script
-   is a separate is:inline script and calls toggleFullScreen()
-   and openShareFlow() as bare globals — without this, both
-   calls threw "toggleFullScreen is not defined" /
-   "openShareFlow is not defined" in the console and did nothing. */
 window.toggleFullScreen = toggleFullScreen;
 window.openShareFlow = openShareFlow;
-// Needed by [slug].astro / poem.astro's inline <script>, which compute a
-// poem-specific paletteIndex for the bar's "Share" button (see the bug where
-// every poem's share card was always using palette 0 because paletteIndex was
-// never being passed at all — fixed by calling these from the inline script).
 window.hashStringToIndex = hashStringToIndex;
 window.cardPalettesLength = cardPalettes.length;

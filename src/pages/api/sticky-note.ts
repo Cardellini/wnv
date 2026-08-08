@@ -1,13 +1,3 @@
-// src/pages/api/sticky-note.ts
-// Astro API endpoint — receives sticky note submissions and emails you via Resend
-//
-// Setup:
-// 1. Sign up at resend.com and get an API key
-// 2. Replace YOUR_RESEND_API_KEY with your key
-// 3. Replace YOUR_EMAIL@EXAMPLE.COM with your email address
-// 4. Replace YOUR_VERIFIED_DOMAIN.COM with your verified Resend domain
-//    (or use onboarding@resend.dev as sender for testing)
-
 import type { APIRoute } from 'astro';
  
 export const prerender = false;

@@ -1,8 +1,3 @@
-// src/pages/api/like-notification.ts
-// Receives like events and emails you via Resend
-//
-// Replace the three placeholders before deploying:
-// YOUR_RESEND_API_KEY, YOUR_EMAIL@EXAMPLE.COM, likes@YOUR_VERIFIED_DOMAIN.COM
 
 import type { APIRoute } from 'astro';
  

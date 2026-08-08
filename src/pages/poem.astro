@@ -17,6 +17,10 @@ const { Content } = defaultPoem ? await render(defaultPoem) : { Content: null };
     items={poems}
 >
     <main class="poems-page">
+        <div class="stories-header" id="storiesHeader">
+            <h1>Poems</h1>
+            <p class="stories-subhead">Rippining my heart out just because</p>
+        </div>
         <div class="poem-display"
              id="poem-container"
              data-poem-title={defaultPoem ? defaultPoem.data.title : "Untitled"}
