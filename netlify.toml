@@ -5,6 +5,11 @@
 [build.environment]
   NODE_VERSION = "22"
 
+[dev]
+  command = "npm run dev"
+  targetPort = 4321
+  framework = "astro"
+
 [[headers]]
   for = "/pagefind/*"
   [headers.values]
