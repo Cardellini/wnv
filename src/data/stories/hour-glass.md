@@ -2,7 +2,7 @@
 id: "9"
 title: "Hour Glass"
 description: "Chapter 4 of my book. Zoe takes a trip with Gryffin but things take a turn as he finally learns about her condition."
-intro: "If you knew how and when it all ends, what would you do with the time you have left"
+intro: "If you knew how and when it all ends, what would you do with the time you have left?"
 image: "/src/assets/stories/hourglass.jpg"
 pubDate: 2026-11-04
 tags: ["fiction", "hope", "short-story", "life"]
@@ -17,6 +17,7 @@ The attendant was holding a platter in her hands, and Zoe let her come in. She w
 “Mr Scott said to bring you these.” With that, she left the room. Zoe could not help but blush. The blush faded as she remembered the last time someone brought a tray like that to her, when she came to after fainting at the subway. 
 
 ****
+
 
 The room was brightly lit. Zoe was disoriented and could not remember getting there. 
 “Hey, where am I?” she asked the nurse. 
@@ -36,6 +37,7 @@ Could it be? Was it the same boy she had seen? It turned out he was the one who 
 
 ****
 
+
 Alone. She had done practically everything she could do in her hotel room. She did not want to go out because deep down she knew she might get lost. If that happened, she would just get overwhelmed, and she did not want to ruin her streak of good feelings. She wanted to watch a movie, but she did not want to watch one alone. Movies were the one thing in her life she had never watched alone. It was either her parents or Amber or… She could not remember. She did not want to pressure herself, but she was starting to remember someone. However, in her current state, she could not distinguish between memories and hallucinations. Not today; she was not going to let her blurry and agonizing past ruin this trip for her and Gryffin.     
  
 But she missed him. Over the last couple of days, it had been him and her against everything wrong with her. Then it occurred to her that she would also leave him soon. That no matter how good this gets, the best she could become was a distant memory to him. But that was not what scared her the most. She was scared that if he learnt about her condition. That if he knew her hourglass only had a few minutes left, he would walk out on her. She had to keep it together until she was sure he was not just being kind. She did not have much hope for this, but she hoped nonetheless. That before she breathed her last, someone would love her the way she deserved.     
@@ -43,6 +45,7 @@ But she missed him. Over the last couple of days, it had been him and her agains
 She decided to start her bath. Maybe this would calm her down. She kept a smile on her face as she looked out her window. If all those people could get out of their houses and face the day, she could get through a few hours on her own. She turned on the tap and watched as the water rose. As it did, she splashed some of it on herself to check the temperature. But the splashing. She could see herself alone in a bath. The water was red. This was not a memory; this had happened. She knew for a fact that this was something she went through. Whose blood was it? Why was she alone? When did this happen? Or maybe she was still hallucinating. It was going to happen; she could feel her body lose stability, her head get heavy, and her mind stop. She collapsed, hitting her head on the edge of the ceramic bath. She turned her head in pain while the lights flooded her eyes. Maybe if she shut them, she would feel better.   
 
  ****
+
 
 “Hey.” Zoe opened her eyes. She was at Hillstone after collapsing at the subway.   
 “Good morning, Zoe. I am Doctor Anderson. How are you feeling now?”    
@@ -62,6 +65,7 @@ Zoe’s mind went blank for a moment. She could see Dr Anderson’s lips move, b
 “I’ll think about it. For now, I want to go home. Please.”    
 
  ****
+
 
 Gryffin was silently pleading with Mrs Herrera to stop talking. He was in a meeting with her as she talked about the type of pictures she wanted of her new ranch. This was one of the most expensive purchases in the city, and she had been featured in The Wealthy, a magazine that communicated the lavish lives of the top one percent. She therefore wanted everything to be perfect. They had done this for about three to four hours, and she kept repeating details to him. He had already gathered what she wanted and had even expressed this to her.     
 “No, no, you must have a quality photo, with the camera turned on the long side showing the stables. It must show the marble strips between the concrete. I would have put full marble, but my assistant said the horses may trip. We do not want that now, do we?” She seemed to know everything except how to listen. He could, however, not complain. It was jobs like these that gave him so much free time to explore his other interests. After this, he would probably go on vacation. He deserved it. He wondered if Zoe would want to come. In fact, he was thinking about her this whole time. What was she doing? Had she eaten yet?    

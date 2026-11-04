@@ -13,12 +13,13 @@ The police knocked down the door and made their way into the living room. The ho
 "Sir, with all due respect, please put at least a towel on."
 "Well, I am sorry, I normally don't bring a towel into the bathroom." The officer gave him one disappointed look before he let him walk into the bedroom.
 
-**
+****
+
 
 Gryffin came out of his room rather tired. He had been up most of the night thinking. Everything that had happened this past couple of days was just unexpected. He went into Zoe's room to check on her, but she was not there. His face was met with panic, and his mind was no longer his. Where was she? He started to pace around the house, and almost as if he had discovered how to speak, he started to call her name.
 "Zoe!" Nobody answered; all he could hear were his own thoughts speaking back at him. She left you, didn't she? Why do you never learn? He quickly brushed them away and hurried downstairs.
 
-**
+****
 
 Amber was seated on the couch with one foot shaking feverishly. She looked up and met his gaze, and without waiting for further invitation, she leaped onto him and slapped him. "Where is my sister? Where did you take her?"
 Her voice was almost gone, and he could tell she had been crying. "Please let us do our job, ma'am." The police pleaded as they restrained her.
@@ -30,7 +31,8 @@ Daniel looked at her and at the rest of the police officers.
 "Where is my sister?" Amber was getting tired of this question, of this attitude Daniel seemed to have, thinking this was a joke.
 "Ma'am, please come down. We have searched the house, and your sister is not here. We found her phone and her purse, but that was it; she is not here. We need Mr Clerk to come with us to make a statement. He also has his rights." Amber was growing increasingly frustrated at protocols. It had been thirty-two hours since Zoe left the hospital and over forty hours since she last saw her. Her sister was dying, and this officer was asking her to come down? What if she never saw her again? No, she could not bring herself to think like that; she needed to have more hope. Who was looking after her sister, and what was she doing?
 
-**
+****
+
 
 Zoe was dancing in the kitchen, making breakfast. Gryffin had almost fallen as he was going to get his keys and go look for her. She turned around only just enough to meet Gryffin coming towards her; he held her tightly in his arms, as if he was inventing hugs and was conducting an experiment. She did not fight it. When he finally let her go, he looked into her eyes and smiled. Maybe he was embarrassed by his behaviour, but she could see he did not regret any of it.
 "I'm sorry. What are you making?" She smiled. "I decided to make breakfast." Gryffin looked over at the counter and saw the ready-made breakfast she was referring to. "This is outrageous. Are those sunny-side-up eggs?" She looked over at the counter and at him. He was not frustrated; in fact, he was slightly amused.
@@ -39,14 +41,15 @@ Zoe was dancing in the kitchen, making breakfast. Gryffin had almost fallen as h
 "They are not raw; they are just one-sided." His smile vanished, and that tingle in his eyes dwindled. "If they are one-sided, then we are on the same side." He said after a moment's thought. How did he do that? How did he always have something to say?
 "I think we should eat now; the food is getting cold." That was right; he had been speaking gibberish, and she had probably not eaten a proper meal since she arrived. She had gone to bed early last night. He helped her with the cutlery as they sat at the table.
 
-**
+****
 
 Amber was seated across from Daniel as he gave a full statement. It was more like he was doing a voice-over for a movie. Maybe he wanted to be an actor. Life can be cruel sometimes. He had already told them that he had dropped her off in East Street, and he had only learnt about the purse later. He was going to hand it over the same night, but when he got home, he and his wife had a falling out, and they had not talked since.
 "She told me that I should give up, that she is tired of hearing my never-ending bad jokes and bad lines from movies no one cares about. When I could not become an actor, I decided I would only perform for her. That she was enough, but even she is done with me." After their untimely separation, he had been a mess and forgot about the whole thing.
 "I might not know what's going on with your sister, but I am sure she wanted to go there." What was he saying? That Zoe had deliberately gone to East Street. Did she leave her things in the car on purpose? Was Amber looking for someone who did not want to be found? No, she had to find her sister. It did not matter what Zoe wanted now; all that mattered was that she got better. She had to.
 Amber asked the police to call Daniel's wife and confirm this. Not because she thought he was lying, but because maybe this would help them get back together. Maybe if she saw how miserable he was, she would return to him. She wished the same were true with Zoe, if only she could see it. Unfortunately for her, hope was slowly fading. She had her sister's missing items, but Zoe was nowhere to be found. It would not be the first time Zoe had done something like this, but it was surely the first time she had done it in her current condition. The last time it happened was eight years ago. Zoe had run away from home at just nineteen, a few months after their parents died. She had come back a week later but not the way she left. She was different and distant. Some form of grief was harbouring her. She had immediately decided to join med school to become an oncologist. It did not matter what change she came back with this time; all Amber wanted was her sister back. She left the police station and decided to further her investigation. She would begin with East Street; she knew the police would do the same, but she could not sit back and do nothing. But first she needed a shower, if only they had those for minds as well.
 
-**
+****
+
 
 Zoe had been staring at Gryffin, who was clearly uncomfortable with his breakfast.
 "I would ask about your childhood just to get out of eating this, but maybe I'll get used to it." Zoe smiled, although he could not shake the feeling that something was bothering her. He took a quick bite of it, and although he was not completely disappointed, he could not hide his distaste.
@@ -61,11 +64,13 @@ Gryffin almost choked at the question.
 "We were going to see the world together. We said we'd never need a place to settle because we'd be each other's home. But I guess I was a foster home. But something in me refused to believe that she would not come back, so the relationships I had after her didn't last until I eventually gave up on love. Figured if I was not worth a proper ending, then what was the point of having a story?"
 She looked at him with compassionate eyes. But deep down, something was eating her up. Her mind was wandering, and she could not get the thought of blood out of her mind. She felt like she was about to break down yet again, but she didn't want to. Today was going to treat her the way she wanted to be treated. In a haze, she picked up a piece of the bread on her plate and threw it on Gryffin's face. He stayed still for a moment, then, as he saw the panic build in her eyes, decided to take it as she was starting a food fight. So they started the fight. In the chaos between dodging and throwing, sadness and grief seemed like passing memories. Something about him chasing her through the kitchen as they played around made Zoe feel like she was a teenager again. Full of life. The irony, she was mostly unhappy, but these moments, known to her as her last, were going to be her happiest. The thought did not bother her in any way. She had already given up; why life was being kind to her was an enigma she did not want to solve. She was just grateful. He finally caught her, and they collapsed on the couch.
 
-**
+****
+
 
 Amber rolled over, then again and again. She did not know what to do. It was not like East Street was a small area. Daniel had been very vague in his description. The man could not remember anything but his wife. It was pathetic what detachment could do to the best of us. She could not blame him. She sat there alone in her empty house and started to cry. She was now thirty-one. Her age suddenly dawned on her, and she started thinking about how she had not had a child. It was not that she had not tried for one. In fact, she had tried immediately after their parents died. She thought her own child would help with the grief, but every time the results were the same. Negative. Till now, Zoe had been all she had left. Her boyfriend Brad had left her seven months ago. It did not help that she was on her phone and saw a post of him and his new fiancé announcing the conception of their first child together. As the minutes passed, the house became bigger and bigger, and she became more and more insignificant. She was a dot on an empty canvas, like her artist had no idea how to paint life in her. She had friends, but most of them either had families of their own or were planning to have them soon. She could not bring herself to hide her jealousy anymore. But no, it was not jealousy. She was disappointed. Disappointed in herself. She was broken as a human being, and she just had to live with it. She had never shared this with anyone, not even Zoe, but now, in this space she called home, she felt like a stranger. There was no life in this house, nothing to make it hers; it was simply an apartment. Even the photos on the wall- how she wanted to fill them with memories- but now they were just art that meant very little to her.
 
-**
+****
+
 
 "Who is that?" Zoe finally asked as her breathing slowed. She was pointing to a photo on the wall- a girl, rather, looking into the sunset at a beach. She had her face turned away from the camera at a tight angle that only revealed her left cheek. This time Gryffin could not help it; he sat down with his head in his hands, and she could tell she was not going to find out everything today.
 "I am sorry." She apologised as she sat there, not knowing what to do with her hands. She could, however, not help but be disappointed. She would have wanted to know more about him and his past.
@@ -80,7 +85,8 @@ She nodded an okay as he reached for his pocket to answer his ringing phone. He 
 "I mean, yeah, that could happen, but are you sure you want to? Don't you want to get back to your family?" Zoe thought about it for no longer than half a second.
 "No, I want to come with you." If she was going to die, it was not going to be on a deathbed.
 
-**
+****
+
 
 Amber had been driving around East Street with nothing but hope. She knew it would probably be futile, but she at least needed to try. It had now been three days, and this was her third day in a row doing this. Every day it got harder to come back, but it was harder to believe that she might never see her sister again. She had been driving around and pulled over to just sit with her thoughts. If only there was a sign. If only she could have at least some form of hope. She got out of the car and decided to get a drink from a shop across the road. When she got there, a woman greeted her warmly. As she tried to make her order, the woman's facial expression changed, as if she had just realised something. Amber felt compelled to ask but did not think she could handle more baggage on her. That was why it came as a surprise when the woman started an apology.
 "I am so sorry for what happened. I didn't mean to say all those mean things."
@@ -95,7 +101,8 @@ Amber was clueless about these events. What was Agatha on about? All she wanted 
 This was a start, but given the information Agatha was providing, Amber could not help but be concerned. Who was this man, and why had Zoe not called her yet? Even more concerning was why Zoe was chasing a child. What was happening with her sister? She narrated to Agatha everything that had occurred and explained to her how it was her missing sister she had interacted with. She could see her guilt deepen. Not only was Zoe lost, but she had cancer. Agatha did not know any of this, but still, it did not excuse her from her behaviour.
 "I am so sorry; I didn't know. I wish I did; people are just going around spreading misfortune even to those who are already unfortunate." As Agatha went ahead to describe the whole situation further, it became increasingly likely that it was Zoe. She was alive. She was in this neighbourhood. This was the sign she had wanted. She thanked Agatha and made her understand that it was okay. That she still had a chance to help. She left her contact details with her in case she saw Zoe again. This was good. But who was this man Zoe was with, and why? Did she finally decide to find someone? She could not dwell on that much, not now, not when she had just gotten her first ray of light. She got into the car, locked herself in, and started to cry again. But this time she was not completely hopeless; she had something to hold on to. She managed to dry her eyes and started to drive hopefully closer to her sister.
 
-**
+****
+
 
 Gryffin had been driving for a few hours now, and they were almost at the hotel. Zoe was pretending to be a radio presenter.
 "Today's weather forecast shows no sign of rain, but how would I know? I am just a girl on the radio. Carry your umbrella, everyone." Her smile was coming back. It was, however, interrupted by a man honking behind them as Gryffin had forgotten about the traffic lights. She giggled as the man overtook them, shaking his head. "Sadly, guys, you cannot see the girl on the radio, so please focus on the road." They both laughed as they took the last intersection before their destination. Zoe looked at Gryffin and mouthed a small 'thank you'. He smiled back, and his eyes were shimmering again. She could see her tiny reflection in them and felt the most seen she had been. She might have been a stranger to him, but his kindness over the last few days had reminded her that she was human. Maybe the world was not kind, but you do not need the kindness of the whole world. At least Zoe did not.
