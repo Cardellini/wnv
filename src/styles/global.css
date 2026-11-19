@@ -11,18 +11,23 @@ html {
     background-color: #1a1816;
 }
 
-/* Desktop: cap slideshow height instead of showing the full image */
+/* Desktop: contained slideshow, not full-bleed */
 @media (min-width: 1025px) {
     .slideshow-layer {
         aspect-ratio: auto;
         height: clamp(420px, 60vh, 640px);
+        width: min(calc(100% - 6rem), 1100px);
+        margin: 0 auto;
+        border-radius: 16px;
     }
     .hero-slide {
         object-fit: cover;
-        object-position: center 40%;
+        object-position: center 70%;
+    }
+    .slideshow-fade {
+        height: 80px;
     }
 }
-
 body {
     font-family: 'Libre Baskerville', Georgia, serif;
     color: #2c2a28;
