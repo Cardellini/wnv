@@ -11,8 +11,16 @@ html {
     background-color: #1a1816;
 }
 
+/* Desktop: cap slideshow height instead of showing the full image */
 @media (min-width: 1025px) {
-    html { scroll-behavior: smooth; }
+    .slideshow-layer {
+        aspect-ratio: auto;
+        height: clamp(420px, 60vh, 640px);
+    }
+    .hero-slide {
+        object-fit: cover;
+        object-position: center 40%;
+    }
 }
 
 body {
